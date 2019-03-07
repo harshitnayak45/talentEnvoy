@@ -14,34 +14,21 @@ export default class RegisterService {
 
   registerUser(userInfoVo) {
     console.log('xxxxx fff', userInfoVo);
-    // return axios({
-    //   url: url.graphql_url,
-    //   method: 'post',
-    //   data: {
-    //     query: `
-    //     mutation {
-    //                 createUser(userInput: {email: "${userInfoVo.email}", password: "${userInfoVo.password}"}) {
-    //                     _id
-    //                     email
-    //                   }
-    //                 }
-    //       `
-    //   }
-    // })
-
-    return  client.query({
-      query: gql`
-      query {
+    return axios({
+      url: url.graphql_url,
+      method: 'post',
+      data: {
+        query: `
         mutation {
-                  createUser(userInput: {email: "${userInfoVo.email}", password: "${userInfoVo.password}"}) {
-                  _id
-                 email
-                 }
-               }
+                    createUser(userInput: {email: "${userInfoVo.email}", password: "${userInfoVo.password}"}) {
+                        _id
+                        email
+                      }
+                    }
+          `
       }
-      
-      `,
     })
+
     .then((result) => {
       console.log('xxxxx', result);
       return Promise.resolve(result);
