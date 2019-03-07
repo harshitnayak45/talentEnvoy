@@ -1,0 +1,55 @@
+$ipad-landscape: 1200px;
+$ipad-portrait: 991px;
+$mobile-landscape: 767px;
+$mobile-portrait: 520px;
+
+@media screen and (max-width: $ipad-landscape) {
+    .dashboard .vs_right_panel {
+        margin-left: 25%;
+        .nav-tabs > a {
+          display: inline-block;
+        }
+        .tab-content .profile_call .table-responsive .table > thead > tr > th {
+          vertical-align: top;
+        }
+      }
+      
+      .calls_link img {
+        max-width: 14px;
+      }
+}
+
+@media screen and (max-width: $ipad-portrait) {
+    .dashboard {
+        .vs_left_panel {
+          width: 30%;
+        }
+        .vs_right_panel {
+          margin-left: 0;
+          .nav-tabs > a {
+            margin-left: 15px;
+          }
+        }
+        .vs_left_panel {
+          width: 250px;
+          transform: translateX(-300px);
+          -webkit-transform: translateX(-300px);
+          transition: all 0.3s;
+          -webkit-transition: all 0.3s;
+        }
+        .button-bar {
+          display: block;
+        }
+        .vs_left_panel.open-left-panel {
+          transform: translateX(0);
+          -webkit-transform: translateX(0);
+        }
+    }
+}
+
+@media screen and (max-width: $mobile-landscape) {
+    .dashboard .vs_right_panel .tab-content .profile_desc .questions_answer {
+        padding: 20px 15px;
+        min-height: 1px;
+      }
+}
